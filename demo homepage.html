@@ -12,9 +12,12 @@
       padding: 0;
     }
     header {
-      background-color: #f44336;
+      background-image: url('images/banner.jpg');
+      background-size: cover;
+      background-repeat: repeat-x;
+      background-position: center;
       color: white;
-      padding: 1rem;
+      padding: 4rem 1rem;
       text-align: center;
     }
     nav {
@@ -113,7 +116,7 @@
 </header>
 
 <nav>
-  <a href="#">Home</a>
+  <a href="demo homepage.html">Home</a>
   <a href="#">Breakfast</a>
   <a href="#">Lunch</a>
   <a href="#">Dinner</a>
@@ -133,32 +136,46 @@
 
   <div class="categories">
     <div class="category">
-      <img src="https://via.placeholder.com/200x150?text=Mexican" alt="Mexican Food">
-      <h3>Mexican</h3>
+      <a href="mexican-recipes.html">
+        <img src="images/mexican.jpg" alt="Mexican Food">
+        <h3>Mexican</h3>
+      </a>
     </div>
     <div class="category">
-      <img src="https://via.placeholder.com/200x150?text=Japanese" alt="Japanese Food">
-      <h3>Japanese</h3>
+      <a href="japanese-recipes.html">
+        <img src="images/japanese.jpg" alt="Japanese Food">
+        <h3>Japanese</h3>
+      </a>
     </div>
     <div class="category">
-      <img src="https://via.placeholder.com/200x150?text=Italian" alt="Italian Food">
-      <h3>Italian</h3>
+      <a href="italian-recipes.html">
+        <img src="images/italian.jpg" alt="Italian Food">
+        <h3>Italian</h3>
+      </a>
     </div>
     <div class="category">
-      <img src="https://via.placeholder.com/200x150?text=Indian" alt="Indian Food">
+    <a href="indian-recipes.html">
+      <img src="images/indian.jpg" alt="Indian Food">
       <h3>Indian</h3>
+    </a>
     </div>
     <div class="category">
-      <img src="https://via.placeholder.com/200x150?text=French" alt="French Food">
+    <a href="french-recipes.html">
+      <img src="images/french.jpeg" alt="French Food">
       <h3>French</h3>
+    </a>
     </div>
     <div class="category">
-      <img src="https://via.placeholder.com/200x150?text=American" alt="American Food">
+    <a href="american-recipes.html">
+      <img src="images/american.webp" alt="American Food">
       <h3>American</h3>
+    </a>
     </div>
     <div class="category">
-      <img src="https://via.placeholder.com/200x150?text=Greek" alt="Greek Food">
+    <a href="greek-recipes.html">
+      <img src="images/greek.webp" alt="Greek Food">
       <h3>Greek</h3>
+    </a>
     </div>
   </div>
 </div>
@@ -180,7 +197,7 @@
     </a>
   </div>
 
-  <a href="#" class="order-button">Order Our Latest Cookbook Now!</a>
+  <a href="#" id="order-btn" class="order-button">Order Our Latest Cookbook Now!</a>
 </div>
 
 
@@ -189,5 +206,13 @@
   &copy; 2025 Tastes of the Globe. All rights reserved.
 </footer>
 
+<script>
+  document.getElementById("order-btn").addEventListener("click", () => { 
+    alert("Thank you for your order! Your CookBook will be with you soon.");
+  });
+</script>
+
 </body>
 </html>
+
+
