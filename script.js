@@ -2,21 +2,17 @@ window.onload = () => {
     // Cookbook order button
     const orderBtn = document.getElementById("order-btn");
     const alarmSound = document.getElementById("alarm-sound");
+    const minutesInput = document.getElementById("minutes");
+    const secondsInput = document.getElementById("seconds");
     if (orderBtn) {
       orderBtn.addEventListener("click", () => {
         alert("Thank you for your order! Your CookBook will be with you soon.");
       });
     }
   
-    // Timer
-    const countdown = document.getElementById("countdown");
-    const minutesInput = document.getElementById("minutes");
-    const secondsInput = document.getElementById("seconds");
-  
     let timerInterval;
     let remainingTime = 0;
   
-    // Update display
     const updateDisplay = () => {
       const mins = Math.floor(remainingTime / 60);
       const secs = remainingTime % 60;
@@ -26,13 +22,11 @@ window.onload = () => {
       }
     };
   
-    // Save to localstorage
     const saveTimerState = () => {
       localStorage.setItem("timerRemaining", remainingTime);
       localStorage.setItem("timerLastUpdated", Date.now());
     };
   
-    // Load current timer
     const restoreTimer = () => {
       const savedRemaining = parseInt(localStorage.getItem("timerRemaining")) || 0;
       const lastUpdated = parseInt(localStorage.getItem("timerLastUpdated")) || 0;
@@ -41,33 +35,38 @@ window.onload = () => {
         const now = Date.now();
         const elapsed = Math.floor((now - lastUpdated) / 1000);
         remainingTime = Math.max(savedRemaining - elapsed, 0);
+  
+        updateDisplay();
+  
+        if (remainingTime > 0) {
+          timerInterval = setInterval(tick, 1000);
+        } else {
+          // Time has expired while switching pages
+          remainingTime = 0;
+          updateDisplay();
+          alarmSound.play();
+          localStorage.removeItem("timerRemaining");
+          localStorage.removeItem("timerLastUpdated");
+        }
       } else {
         remainingTime = 0;
-      }
-  
-      updateDisplay();
-  
-      if (remainingTime > 0) {
-        timerInterval = setInterval(tick, 1000);
+        updateDisplay();
       }
     };
   
     const tick = () => {
       if (remainingTime > 0) {
-          remainingTime--;
-          updateDisplay();
-          saveTimerState();
+        remainingTime--;
+        updateDisplay();
+        saveTimerState();
       } else {
-          clearInterval(timerInterval);
-          alert("Time's up! 🔔");
-          alarmSound.play();
-          localStorage.removeItem("timerRemaining");
-          localStorage.removeItem("timerLastUpdated");
+        clearInterval(timerInterval);
+        alarmSound.play();
+        localStorage.removeItem("timerRemaining");
+        localStorage.removeItem("timerLastUpdated");
       }
     };
-      
   
-    // Show on all pages
     window.startTimer = () => {
       const min = parseInt(minutesInput?.value) || 0;
       const sec = parseInt(secondsInput?.value) || 0;
@@ -86,16 +85,14 @@ window.onload = () => {
     };
   
     window.resetTimer = () => {
-        clearInterval(timerInterval);
-        remainingTime = 0;
-        updateDisplay();
-        alarmSound.pause();
-        alarmSound.currentTime = 0; 
-        localStorage.removeItem("timerRemaining");
-        localStorage.removeItem("timerLastUpdated");
+      clearInterval(timerInterval);
+      remainingTime = 0;
+      updateDisplay();
+      alarmSound.pause();
+      alarmSound.currentTime = 0;
+      localStorage.removeItem("timerRemaining");
+      localStorage.removeItem("timerLastUpdated");
     };
-      
-    // Initialize
+  
     restoreTimer();
   };
-  
