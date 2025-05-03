@@ -96,3 +96,8 @@ window.onload = () => {
   
     restoreTimer();
   };
+
+  function flipCard(card) {
+    card.classList.toggle('flipped');
+  }
+  

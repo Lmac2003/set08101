@@ -1,0 +1,69 @@
+.recipe-flip-container {
+  display: flex;
+  justify-content: center;
+  margin: 3rem auto;
+}
+
+.flip-card {
+  background: transparent;
+  width: 320px;
+  height: 400px;
+  perspective: 1000px;
+  cursor: pointer;
+}
+
+.flip-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  transition: transform 0.8s;
+  transform-style: preserve-3d;
+}
+
+.flip-card.flipped .flip-inner {
+  transform: rotateY(180deg);
+}
+
+.flip-front, .flip-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  border-radius: 12px;
+  padding: 1.5rem;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  background-color: #fff3e6;
+  text-align: left;
+}
+
+.flip-front {
+  z-index: 2;
+}
+
+.flip-back {
+  transform: rotateY(180deg);
+  background-color: #ffe3bb;
+}
+
+.flip-tip {
+  margin-top: 1rem;
+  font-size: 0.9rem;
+  font-style: italic;
+  color: #888;
+}
+
+button {
+    display: block;
+    margin: 2rem auto;
+    padding: 0.75rem 1.5rem;
+    background-color: #ff0000;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    font-size: 1.2rem;
+    cursor: pointer;
+  }
+  
+  button:hover {
+    background-color: #c49600;
+}

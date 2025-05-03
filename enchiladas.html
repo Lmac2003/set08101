@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Chicken Enchiladas Recipe</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="recipe-card.css" />
+</head>
+<body>
+
+<header>
+  <h1>Chicken Enchiladas</h1>
+  <p>Tender chicken, rich sauce, and gooey cheese 🌶️</p>
+</header>
+
+<nav>
+  <a href="index.html">Home</a>
+  <a href="#">Breakfast</a>
+  <a href="#">Lunch</a>
+  <a href="#">Dinner</a>
+  <a href="#">Quick Meals</a>
+  <a href="#">Desserts</a>
+  <a href="#">Vegetarian</a>
+  <a href="#">Vegan</a>
+  <a href="#">Snacks</a>
+  <a href="#">Drinks</a>
+  <a href="#">Healthy Choices</a>
+  <a href="#">Kids Meals</a>
+</nav>
+
+<main>
+  <section class="recipe-flip-container">
+    <div class="flip-card" onclick="flipCard(this)">
+      <div class="flip-inner">
+        <!-- Front -->
+        <div class="flip-front">
+          <h2>Ingredients</h2>
+          <ul>
+            <li>2 cups cooked shredded chicken</li>
+            <li>1 cup enchilada sauce</li>
+            <li>1 cup shredded cheese</li>
+            <li>6 corn tortillas</li>
+            <li>1/2 onion, chopped</li>
+            <li>1 tbsp olive oil</li>
+          </ul>
+          <p class="flip-tip">(Click to see steps)</p>
+        </div>
+
+        <!-- Back -->
+        <div class="flip-back">
+          <h2>Cooking Steps</h2>
+          <ol>
+            <li>Preheat oven to 180°C (350°F).</li>
+            <li>Sauté onion in olive oil until soft.</li>
+            <li>Mix chicken with half the enchilada sauce and onions.</li>
+            <li>Fill tortillas, roll them up, and place in baking dish.</li>
+            <li>Pour remaining sauce over the top, sprinkle cheese.</li>
+            <li>Bake for 20–25 minutes until bubbly.</li>
+            <li>Enjoy!</li>
+          </ol>
+          <p class="flip-tip">(Click to flip back)</p>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<div id="cooking-timer">
+  <h3>Cooking Timer</h3>
+  <input type="number" id="minutes" placeholder="Min" min="0"> :
+  <input type="number" id="seconds" placeholder="Sec" min="0">
+  <div>
+    <button onclick="startTimer()">Start</button>
+    <button onclick="pauseTimer()">Pause</button>
+    <button onclick="resetTimer()">Reset</button>
+  </div>
+  <p id="countdown">00:00</p>
+</div>
+
+<audio id="alarm-sound" src="audio/alarm.mp3" loop></audio>
+
+<button id="order-btn">Order Our Latest CookBook Now!</button>
+
+<footer>
+  <p>&copy; 2025 Fiesta Mexicana Recipes</p>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
