@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Churros Recipe</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="recipe-card.css" />
+</head>
+<body>
+
+<header>
+  <h1>Churros</h1>
+  <p>Golden, crispy, cinnamon-sugar treats 🍩</p>
+</header>
+
+<nav>
+  <a href="index.html">Home</a>
+  <a href="#">Breakfast</a>
+  <a href="#">Lunch</a>
+  <a href="#">Dinner</a>
+  <a href="#">Quick Meals</a>
+  <a href="#">Desserts</a>
+  <a href="#">Vegetarian</a>
+  <a href="#">Vegan</a>
+  <a href="#">Snacks</a>
+  <a href="#">Drinks</a>
+  <a href="#">Healthy Choices</a>
+  <a href="#">Kids Meals</a>
+</nav>
+
+<main>
+  <section class="recipe-flip-container">
+    <div class="flip-card" onclick="flipCard(this)">
+      <div class="flip-inner">
+        <!-- Front -->
+        <div class="flip-front">
+          <h2>Ingredients</h2>
+          <ul>
+            <li>1 cup water</li>
+            <li>2 tbsp sugar</li>
+            <li>2 tbsp oil</li>
+            <li>1 cup flour</li>
+            <li>Oil for frying</li>
+            <li>Sugar & cinnamon for coating</li>
+            <li>Chocolate sauce (optional)</li>
+          </ul>
+          <p class="flip-tip">(Click to see steps)</p>
+        </div>
+
+        <!-- Back -->
+        <div class="flip-back">
+          <h2>Cooking Steps</h2>
+          <ol>
+            <li>Boil water, sugar, and oil together.</li>
+            <li>Add flour and stir until a dough forms.</li>
+            <li>Let cool slightly, then pipe into hot oil.</li>
+            <li>Fry until golden and crispy.</li>
+            <li>Roll in cinnamon sugar.</li>
+            <li>Serve warm with chocolate sauce!</li>
+            <li>Serve warm with chocolate sauce!</li>
+          </ol>
+          <p class="flip-tip">(Click to flip back)</p>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<div id="cooking-timer">
+  <h3>Cooking Timer</h3>
+  <input type="number" id="minutes" placeholder="Min" min="0"> :
+  <input type="number" id="seconds" placeholder="Sec" min="0">
+  <div>
+    <button onclick="startTimer()">Start</button>
+    <button onclick="pauseTimer()">Pause</button>
+    <button onclick="resetTimer()">Reset</button>
+  </div>
+  <p id="countdown">00:00</p>
+</div>
+
+<button id="order-btn">Order Our Latest CookBook Now!</button>
+
+<footer>
+  <p>&copy; 2025 Fiesta Mexicana Recipes</p>
+</footer>
+
+<audio id="alarm-sound" src="alarm.mp3" loop></audio>
+
+<script src="script.js"></script>
+</body>
+</html>
