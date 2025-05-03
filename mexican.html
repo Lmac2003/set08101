@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Fiesta Mexicana Menu</title>
+  <link rel="stylesheet" href="mexican-style.css" />
+</head>
+<body>
+  <header>
+    <h1>Welcome to Fiesta Mexicana</h1>
+    <p>Bold Flavours & Authentic Mexican Recipes</p>
+  </header>
+
+  <main>
+    <section class="menu">
+      <h2><a href="tacos.html">Classic Tacos</a></h2>
+      <img src="tacos.jpg" alt="Classic Tacos" class="food-photo" />
+      <p><strong>Beef Tacos</strong> – Crispy shells filled with spiced beef, lettuce, cheese, and salsa. A true Mexican favourite! 🌮</p>
+
+      <h2><a href="enchiladas.html">Cheesy Enchiladas</a></h2>
+      <img src="enchiladas.jpg" alt="Chicken Enchiladas" class="food-photo" />
+      <p><strong>Chicken Enchiladas</strong> – Tender chicken wrapped in corn tortillas, smothered in enchilada sauce and melted cheese. 🌶️</p>
+
+      <h2><a href="churros.html">Sweet Churros</a></h2>
+      <img src="churros.jpg" alt="Churros" class="food-photo" />
+      <p><strong>Churros</strong> – Fried dough rolled in cinnamon sugar and served with warm chocolate sauce. A sweet ending! 🍩</p>
+    </section>
+
+    <div id="cooking-timer">
+      <h3>Cooking Timer</h3>
+      <input type="number" id="minutes" placeholder="Min" min="0"> :
+      <input type="number" id="seconds" placeholder="Sec" min="0">
+      <div>
+        <button onclick="startTimer()">Start</button>
+        <button onclick="pauseTimer()">Pause</button>
+        <button onclick="resetTimer()">Reset</button>
+      </div>
+      <p id="countdown">00:00</p>
+    </div>
+
+    <button id="order-btn">Order Our Latest CookBook Now!</button>
+    <a href="index.html" class="button-link">Back to Home</a>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 Fiesta Mexicana Recipes</p>
+  </footer>
+
+  <audio id="alarm-sound" src="alarm.mp3" loop></audio>
+
+  <script src="script.js"></script>
+</body>
+</html>

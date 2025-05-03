@@ -6,7 +6,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Tastes of the Globe</title>
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="index-style.css">
   <title>Tastes of the Globe</title> 
 </head>
 <body>
@@ -14,7 +14,6 @@
 <header>
   <h1>Welcome to Tastes of the Globe</h1>
 </header>
-
 
 <nav>
   <a href="index.html">Home</a>
@@ -113,13 +112,19 @@
   <a href="#" id="order-btn" class="order-button">Order Our Latest Cookbook Now!</a>
 </div>
 
-
-
 <footer>
   &copy; © 2025 Tastes of the Globe.
 </footer>
 
+<audio id="alarm-sound" src="alarm.mp3" loop></audio>
+
 <script src="script.js"></script>
+
+<script>
+  document.getElementById("order-btn").addEventListener("click", () => { 
+    alert("Thank you for your order! Your CookBook will be with you soon.");
+  });
+</script>
 
 </body>
 </html>
